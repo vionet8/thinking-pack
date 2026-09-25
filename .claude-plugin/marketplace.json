@@ -1,0 +1,14 @@
+{
+  "name": "thinking-pack",
+  "description": "私の考え方と集めた知見を、どのClaudeでも同じ前提で使うためのプラグイン",
+  "owner": {
+    "name": "vionet8"
+  },
+  "plugins": [
+    {
+      "name": "thinking-pack",
+      "source": "./plugins/thinking-pack",
+      "description": "私の考え方・集めた知見と、それを扱うためのスキル一式"
+    }
+  ]
+}
