@@ -269,7 +269,7 @@ URL: https://www.youtube.com/watch?v=oB0LgqD2Ihw
 
 （内容:「AIガチ勢」と「AI弱者」の使い方の決定的な違い）
 
-チャンネル: 不明
+チャンネル: サラタメさん（ユーザーによる。メインチャンネル「サラタメさん【サラリーマンYouTuber】」とみられる）
 URL: https://www.youtube.com/watch?v=o8mMELmh4Ak
 
 **grounding**: ユーザーが提供した要約文（2026-09-25。タイムスタンプつきで、AIによる動画要約とみられる）を
