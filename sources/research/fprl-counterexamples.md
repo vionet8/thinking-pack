@@ -1,0 +1,65 @@
+# FPRLへの反例を世間の研究から探す（2026-09-26）
+
+**grounding**: paraphrase・要検証。Web検索の結果（検索結果の要約）をもとにした整理で、論文本文は読んでいない。
+FPRL側の記述は `fprl/FPRL.md`（本文）と照らした。
+
+## 結論
+
+FPRLを一発で否定する反例は見つからなかった。ただしその理由の半分は、FPRLが強いからではなく、
+**反例を取り込める逃げ道が定義の中にある**から。一番重い反例は「言語化が熟達を妨げる」研究で、
+これはFPRLの言語化重視に条件を付けることを迫る。
+
+## 反例の候補と、FPRLの受け止め方
+
+| FPRLの主張 | 反例になりうる研究 | 何が起きるか | FPRL本文の扱い | 判定 |
+|---|---|---|---|---|
+| 学習にはR（意味づけ）が要る。Rが完全にゼロの学習はない | 暗黙学習（Reber 1967 の人工文法）、乳児の統計学習（Saffran） | 規則に気づかないまま、規則に沿った判断ができるようになる | 「潜在R」があると定義して取り込む | **取り込み済み。ただし定義による取り込みで、反証できない形になっている** |
+| 学習は差分（違和感）から始まる | 睡眠による運動学習（Walker 2002） | 練習も新しい入力もない睡眠の後に、指の動きの速さが約20%上がる | 直接の記述なし。過去の差分の処理（潜在R）として取り込める | **取り込めるが、「新しい差分なしに伸びる」時間があることは明記されていない** |
+| 差分を処理すると学習が進む | 誤りなし学習（Baddeley & Wilson 1994） | 記憶障害のある人では、誤りを経験させないほうがよく覚える。誤りを経験すると、誤りのほうが強化される | 記述なし | **部分的な反例。差分が「間違ったほうのF」を強めることがある** |
+| 熟達の差は、境界の小さな違和感を言葉にできるかに出る。言語化しないと消える | 言語隠蔽効果（Schooler 1990）、プレッシャー下の失敗（Beilock） | 見たものを言葉で説明させると、顔や色の再認が落ちる。熟練者が手順を意識すると、自動化された技能が崩れる | 「R精緻＝言語化せずとも正しく判断できる」とは書いてあるが、言語化が害になる場合は書いていない | **一番重い反例。言語化は常に良いわけではない** |
+| 振り返り（15分）が学習を進める | Di Stefano, Gino, Pisano, Staats（コールセンターの研修で、毎日15分の振り返りをした人は最終テストが23%良かった） | — | — | **反例ではなく支持** |
+
+### 言語隠蔽効果の細かい所（ここがFPRLに一番効く）
+
+- 言葉にすることで記憶や判断が落ちるのは、**知覚の力が言葉の力を上回っている人**に起きやすい。
+  知覚と言葉の力が釣り合っている熟練者には起きない。
+- 効果は再現が難しい時期があったが、多数の研究室による大規模な追試で、効果そのものはあると確かめられた。
+- FPRLに当てはめると: 違和感を言葉にさせる介入は、言葉がまだ追いついていない段階の人（新人や中堅）には
+  逆効果になりうる。一方、言葉と知覚が釣り合った人には害がない。つまり「言語化しないと消える」は
+  全員には当てはまらず、段階によって向きが変わる。
+
+## 「反例が見つからない」ことの意味
+
+- FPRLは F を「予測・価値観・身体感覚・感情まで含む基準」と広く定義し、Rにも「潜在R」を置いている。
+  このため、気づかないまま学ぶ・眠っている間に伸びる、といった現象も、定義の中に取り込める。
+- 何でも取り込める理論は、外れることがない代わりに、当たったことにもならない。反例が見つからないのは、
+  今のままでは「強さ」の証拠ではない。
+- 反証できる形にするには、「FPRLが正しければこうなる、違えばこうなる」という予測を先に書く必要がある。
+
+## FPRLを反証できる形にする案
+
+1. **言語化の効き方を段階で分ける予測を足す。** 「知覚が言葉を上回る段階では、違和感を言葉にさせる介入は
+   短期の判断を悪くする。言葉が追いついた段階では良くする」。これは言語隠蔽効果と整合し、外れうる。
+2. **潜在Rに観測できる印を決める。** 何が起きていれば潜在Rがあった、何が起きていなければなかった、と言えるか。
+   決められなければ、潜在Rは説明のための仮置きにとどまる。
+3. **誤りが強化される条件を書く。** 差分を処理しても、Fが誤った方向に更新される場合（誤りなし学習が効く場面、
+   思い込みの強化）を、停滞パターンの一つとして持つ。
+
+## 仕事の聞き取りへの示唆
+
+- 新人・中堅に「違和感を言葉にして」と強く求めすぎると、言語隠蔽の形で本人の見る力を損ねるおそれがある。
+  聞き取りの指示文（`prompts/ai-interviewer.md`）は、抽象的な言語化より具体的な場面の再現と候補からの選択
+  （再認）を中心にしていて、この点では安全側にある。
+
+## 出典（検索結果）
+
+- [Verbal Overshadowing（Schooler lab, UCSB）](https://labs.psych.ucsb.edu/schooler/jonathan/research/verbal-overshadowing)
+- [Verbal overshadowing（Wikipedia）](https://en.wikipedia.org/wiki/Verbal_overshadowing)
+- [Turning the Lens of Science on Itself: Verbal Overshadowing, Replication, and Metascience（PubMed）](https://pubmed.ncbi.nlm.nih.gov/26186759/)
+- [Verbal Overshadowing of Memories for Fencing Movements Is Mediated by Expertise（PLOS One）](https://journals.plos.org/plosone/article?id=10.1371%2Fjournal.pone.0089276)
+- [Implicit Learning: History & Applications（Reber lab）](https://sites.northwestern.edu/reberlab/files/2012/07/Reber-Implicit-Learning-2017.pdf)
+- [Implicit learning and statistical learning: one phenomenon, two approaches（ScienceDirect）](https://www.sciencedirect.com/science/article/abs/pii/S1364661306000787)
+- [Practice with Sleep Makes Perfect: Sleep-Dependent Motor Skill Learning（Neuron, 2002）](https://www.sciencedirect.com/science/article/pii/S0896627302007468)
+- [Errorless Learning in the Rehabilitation of Memory Impairment: A Critical Review（Springer）](https://link.springer.com/article/10.1007/s11065-008-9051-4)
+- [What Governs Choking Under Pressure?（APA）](https://www.apa.org/pubs/journals/releases/xge-1304701.pdf)
+- [Learning by Thinking: How Reflection Can Spur Progress Along the Learning Curve（SSRN）](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=2414478)
