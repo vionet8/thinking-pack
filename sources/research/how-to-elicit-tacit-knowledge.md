@@ -38,10 +38,10 @@
 
 ## 出典
 
-- Applied Cognitive Task Analysis (ACTA): A practitioner's toolkit: https://www.academia.edu/1008791/
+- Applied Cognitive Task Analysis (ACTA): A practitioner's toolkit: https://www.academia.edu/1008791/Applied_Cognitive_Task_Analysis_ACTA_A_practitioners_toolkit_for_understanding_cognitive_task_demands
 - An Easier Method for Extracting Tacit Knowledge（Commoncog）: https://commoncog.com/an-easier-method-for-extracting-tacit-knowledge/
 - Lessons Learned from Customizing and Applying ACTA: https://arxiv.org/pdf/2108.05622
-- Laddering: technique and tool use in knowledge acquisition: https://www.academia.edu/2821363/
+- Laddering: technique and tool use in knowledge acquisition: https://www.academia.edu/2821363/Laddering_technique_and_tool_use_in_knowledge_acquisition
 - Use a repertory grid（Emerald）: https://www.emeraldgrouppublishing.com/how-to/observation/use-a-repertory-grid
 - Eliciting tacit knowledge: video-stimulated interviewing: https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6283779/
 - Knowledge Elicitation Methods（WPI）: https://web.cs.wpi.edu/~jburge/thesis/kematrix.html
