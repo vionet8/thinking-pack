@@ -24,6 +24,7 @@
 | [fprl/FPRL.md](fprl/FPRL.md) | FPRL（学習のモデル）理論の全文 |
 | [fprl/2026-03-28_discussion-memo.md](fprl/2026-03-28_discussion-memo.md) | FPRLの議論メモ（定義の厳密化・転移・未解決の課題） |
 | [fprl/fprl-questions-refined.csv](fprl/fprl-questions-refined.csv) | FPRLで見る力の質問票（20軸×場面×5段階） |
+| [fprl/education-design-system.md](fprl/education-design-system.md) | FPRL教育設計システム（変容型・積み上げ型の設計シートとAI用指示文、失敗の強度設計） |
 | [sources/videos/](sources/videos/) | 動画の要約 |
 | [sources/my-articles/](sources/my-articles/) | 本人のnote記事 |
 | [sources/manga/](sources/manga/) | 漫画の読み解き |
