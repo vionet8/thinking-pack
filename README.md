@@ -42,6 +42,7 @@
 | [聞き出すときは「一番困った件」か「場面の設定」から入る](thoughts/2026-09-26_elicit-from-hardest-case-or-scene.md) |
 | [新人も情報の宝庫](thoughts/2026-09-26_newcomers-are-a-source.md) |
 | [今の時点で価値がなければ、自分の作ったものに固執しない](thoughts/2026-09-26_no-attachment-to-own-work.md) |
+| [仕事で得た型を、一般にも当てはまらないかと純化していく](thoughts/2026-09-26_purify-from-work-to-general.md) |
 | [思い出してもらうには、具体的な場面を指定する](thoughts/2026-09-26_recall-needs-concrete-episode.md) |
 | [チームのAIのつまずきを集めて、対策をスキルにして配る](thoughts/2026-09-26_team-ai-stumbles-become-skills.md) |
 | [テーマ決めは「なんで」と「どうする」を突き詰める](thoughts/2026-09-26_theme-needs-why-and-how.md) |
