@@ -26,6 +26,7 @@
 | [sources/my-articles/](sources/my-articles/) | 本人のnote記事 |
 | [sources/manga/](sources/manga/) | 漫画の読み解き |
 | [sources/research/](sources/research/) | 調べもの（先行研究・事例の調査メモ） |
+| [prompts/](prompts/) | そのまま使える指示文（例: AI聞き取り） |
 
 ### 考え（thoughts）
 
