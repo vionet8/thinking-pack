@@ -25,6 +25,7 @@
 | [sources/videos/](sources/videos/) | 動画の要約 |
 | [sources/my-articles/](sources/my-articles/) | 本人のnote記事 |
 | [sources/manga/](sources/manga/) | 漫画の読み解き |
+| [sources/research/](sources/research/) | 調べもの（先行研究・事例の調査メモ） |
 
 ### 考え（thoughts）
 
