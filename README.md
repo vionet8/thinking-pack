@@ -40,6 +40,7 @@
 | [真意は、質問の積み重ねから読む](thoughts/2026-09-24_read-intent-from-question-history.md) |
 | [1割は自分を疑う](thoughts/2026-09-24_ten-percent-doubt.md) |
 | [AIは使い倒す](thoughts/2026-09-24_use-ai-to-the-fullest.md) |
+| [悪いFPRLのショートカットもある](thoughts/2026-09-26_bad-shortcuts-exist.md) |
 | [指摘は「で、何？」に答えられないと意味がない](thoughts/2026-09-26_critique-must-change-action.md) |
 | [聞き出すときは「一番困った件」か「場面の設定」から入る](thoughts/2026-09-26_elicit-from-hardest-case-or-scene.md) |
 | [新人も情報の宝庫](thoughts/2026-09-26_newcomers-are-a-source.md) |
@@ -50,6 +51,7 @@
 | [テーマ決めは「なんで」と「どうする」を突き詰める](thoughts/2026-09-26_theme-needs-why-and-how.md) |
 | [統合理論を一つ深く理解すると、世の中の理がある程度インストールされるのではないか](thoughts/2026-09-26_unifying-theory-installs-principles.md) |
 | [一番大事なのは、貯めた情報を何に使うか](thoughts/2026-09-26_use-decides-what-to-store.md) |
+| [言語化しないと、判断も共有もできない](thoughts/2026-09-26_verbalize-to-judge-and-share.md) |
 
 ### 動画の要約（Motocrab）
 
