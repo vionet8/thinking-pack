@@ -45,6 +45,7 @@
 | [思い出してもらうには、具体的な場面を指定する](thoughts/2026-09-26_recall-needs-concrete-episode.md) |
 | [チームのAIのつまずきを集めて、対策をスキルにして配る](thoughts/2026-09-26_team-ai-stumbles-become-skills.md) |
 | [テーマ決めは「なんで」と「どうする」を突き詰める](thoughts/2026-09-26_theme-needs-why-and-how.md) |
+| [統合理論を一つ深く理解すると、世の中の理がある程度インストールされるのではないか](thoughts/2026-09-26_unifying-theory-installs-principles.md) |
 | [一番大事なのは、貯めた情報を何に使うか](thoughts/2026-09-26_use-decides-what-to-store.md) |
 
 ### 動画の要約（Motocrab）
