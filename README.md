@@ -36,6 +36,7 @@
 | [真意は、質問の積み重ねから読む](thoughts/2026-09-24_read-intent-from-question-history.md) |
 | [1割は自分を疑う](thoughts/2026-09-24_ten-percent-doubt.md) |
 | [AIは使い倒す](thoughts/2026-09-24_use-ai-to-the-fullest.md) |
+| [テーマ決めは「なんで」と「どうする」を突き詰める](thoughts/2026-09-26_theme-needs-why-and-how.md) |
 
 ### 動画の要約（Motocrab）
 
