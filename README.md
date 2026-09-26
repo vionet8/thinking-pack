@@ -39,6 +39,7 @@
 | [1割は自分を疑う](thoughts/2026-09-24_ten-percent-doubt.md) |
 | [AIは使い倒す](thoughts/2026-09-24_use-ai-to-the-fullest.md) |
 | [聞き出すときは「一番困った件」か「場面の設定」から入る](thoughts/2026-09-26_elicit-from-hardest-case-or-scene.md) |
+| [新人も情報の宝庫](thoughts/2026-09-26_newcomers-are-a-source.md) |
 | [思い出してもらうには、具体的な場面を指定する](thoughts/2026-09-26_recall-needs-concrete-episode.md) |
 | [テーマ決めは「なんで」と「どうする」を突き詰める](thoughts/2026-09-26_theme-needs-why-and-how.md) |
 
