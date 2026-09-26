@@ -22,6 +22,8 @@
 | [hypotheses.md](hypotheses.md) | 思考法の仮説の一覧 |
 | [learning-principles.md](learning-principles.md) | 学習・振り返りの原則 |
 | [fprl/FPRL.md](fprl/FPRL.md) | FPRL（学習のモデル）理論の全文 |
+| [fprl/2026-03-28_discussion-memo.md](fprl/2026-03-28_discussion-memo.md) | FPRLの議論メモ（定義の厳密化・転移・未解決の課題） |
+| [fprl/fprl-questions-refined.csv](fprl/fprl-questions-refined.csv) | FPRLで見る力の質問票（20軸×場面×5段階） |
 | [sources/videos/](sources/videos/) | 動画の要約 |
 | [sources/my-articles/](sources/my-articles/) | 本人のnote記事 |
 | [sources/manga/](sources/manga/) | 漫画の読み解き |
