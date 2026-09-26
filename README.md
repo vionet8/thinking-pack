@@ -42,6 +42,7 @@
 | [新人も情報の宝庫](thoughts/2026-09-26_newcomers-are-a-source.md) |
 | [思い出してもらうには、具体的な場面を指定する](thoughts/2026-09-26_recall-needs-concrete-episode.md) |
 | [テーマ決めは「なんで」と「どうする」を突き詰める](thoughts/2026-09-26_theme-needs-why-and-how.md) |
+| [一番大事なのは、貯めた情報を何に使うか](thoughts/2026-09-26_use-decides-what-to-store.md) |
 
 ### 動画の要約（Motocrab）
 
