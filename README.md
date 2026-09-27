@@ -54,6 +54,7 @@
 | [統合理論を一つ深く理解すると、世の中の理がある程度インストールされるのではないか](thoughts/2026-09-26_unifying-theory-installs-principles.md) |
 | [一番大事なのは、貯めた情報を何に使うか](thoughts/2026-09-26_use-decides-what-to-store.md) |
 | [言語化しないと、判断も共有もできない](thoughts/2026-09-26_verbalize-to-judge-and-share.md) |
+| [使いどころを1つに絞って書くと、AIはそれしか使わない](thoughts/2026-09-27_ai-reads-examples-as-limits.md) |
 
 ### 動画の要約（Motocrab）
 
