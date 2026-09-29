@@ -56,6 +56,7 @@
 | [言語化しないと、判断も共有もできない](thoughts/2026-09-26_verbalize-to-judge-and-share.md) |
 | [使いどころを1つに絞って書くと、AIはそれしか使わない](thoughts/2026-09-27_ai-reads-examples-as-limits.md) |
 | [残業を、今の業務を終わらせるためではなく、改善の視点で見直すために使う](thoughts/2026-09-28_overtime-for-improvement.md) |
+| [テーマを決めるより、リーダーが仮説を持って小さく試す](thoughts/2026-09-29_small-tests-over-themes.md) |
 
 ### 動画の要約（Motocrab）
 
