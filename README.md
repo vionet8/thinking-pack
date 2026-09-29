@@ -57,6 +57,7 @@
 | [使いどころを1つに絞って書くと、AIはそれしか使わない](thoughts/2026-09-27_ai-reads-examples-as-limits.md) |
 | [残業を、今の業務を終わらせるためではなく、改善の視点で見直すために使う](thoughts/2026-09-28_overtime-for-improvement.md) |
 | [改善は管理しにくいが、だからこそ成長につながる](thoughts/2026-09-29_improvement-is-hard-to-manage-but-grows-people.md) |
+| [AI時代のインセンティブ設計は、自分のクビに直結する](thoughts/2026-09-29_incentive-design-and-job-security.md) |
 | [テーマを決めるより、リーダーが仮説を持って小さく試す](thoughts/2026-09-29_small-tests-over-themes.md) |
 
 ### 動画の要約（Motocrab）
