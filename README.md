@@ -66,6 +66,7 @@
 |---|
 | [人はどう「学ぶこと」を学ぶのか｜なぜ何をやらせても上達が速い人がいるのか](sources/videos/motocrab/17w49_VzkGc.md) |
 | [文明は抽象化でできている【世界からムダを消す思考法】](sources/videos/motocrab/6y6j27tR1VM.md) |
+| [覚醒の科学｜最高のパフォーマンスを自分でつくる方法](sources/videos/motocrab/8bocIcfox5I.md) |
 | [AIが出した結論を覚えただけで賢くなった気でいないか｜借り物の知性の構造](sources/videos/motocrab/8uy-fpEDkXY.md) |
 | [成功体験は、人をバカにする【過去の正解が未来の失敗になる理由】](sources/videos/motocrab/AtrFAw_mRrE.md) |
 | [「自分で考える」の前にやるべきこと｜巨人の肩に乗るという思考法](sources/videos/motocrab/C2lRzS6kaSk.md) |
