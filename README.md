@@ -59,7 +59,6 @@
 | [改善は管理しにくいが、だからこそ成長につながる](thoughts/2026-09-29_improvement-is-hard-to-manage-but-grows-people.md) |
 | [AI時代のインセンティブ設計は、自分のクビに直結する](thoughts/2026-09-29_incentive-design-and-job-security.md) |
 | [テーマを決めるより、リーダーが仮説を持って小さく試す](thoughts/2026-09-29_small-tests-over-themes.md) |
-| [フィジカルAIは、人間のリモコン操作の模倣から自宅で一通り試す](thoughts/2026-10-07_physical-ai-from-human-teleop.md) |
 
 ### 動画の要約（Motocrab）
 
