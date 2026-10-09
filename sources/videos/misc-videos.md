@@ -375,7 +375,7 @@ URL: https://www.youtube.com/watch?v=ObcZpS914k0
 
 **grounding**: 文字起こし（ユーザーが貼った自動文字起こしの全文、誤変換あり）をClaudeが要約した。
 数値は文字起こしのとおり。研究の特定はClaudeが検索で照合したもので、「確認」以外は推定。
-文字起こしの全文は非公開側に保存（第三者の著作物のため公開しない）。
+文字起こしの全文は非公開の作業用リポジトリの `thinking-framework/sources/transcripts/ObcZpS914k0.txt` に保存（第三者の著作物のため公開しない）。
 
 ### 主張の骨組み
 
