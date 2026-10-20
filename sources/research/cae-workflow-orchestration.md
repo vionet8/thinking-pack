@@ -103,6 +103,102 @@
 例: Abaqus/CAE を `script=` で起動し、モデルを開いて部品の数を数え、結果をファイルに書いて閉じる。
 通ったら、制御プログラムから起動して、完了ファイルを待って次の工程に進む形にする。
 
+## Abaqus/CAE: .cae と .jnl を開き、中のジョブを流す（コア数と作業フォルダつき）（2026-10-20 追記）
+
+本人の今の手作業: .cae と .jnl を開く → 作業フォルダを作る → 計算コア数を決める → 中にあるジョブを流す。これを自動にする。
+
+### 前提: .cae と .jnl の役割
+
+- **.cae** はモデルの本体。普段はこれを開けばよい（スクリプトでは `openMdb`）。
+- **.jnl** は、保存したモデルを作り直すための操作の記録。保存のたびに追記される。
+  .cae を移したりコピーしたりするときは、.jnl も同じフォルダに一緒に置く。
+- **.cae が壊れた・開けないとき**だけ、.jnl から作り直す: `abaqus cae recover=名前.jnl`（拡張子を省くと .jnl とみなされる）。
+
+### 流れ
+
+1. **作業フォルダを作る。** 案件・条件・日付などで名前を付ける。元の .cae と .jnl を**一緒に**コピーして、元は触らない。
+2. **作業フォルダに移る。** ジョブの出力（.odb・.sta・.msg など）は、今いるフォルダに出る。画面の「作業ディレクトリの設定」にあたるのは、スクリプトでは `os.chdir(作業フォルダ)`。
+3. **.cae を開く。**
+4. **中のジョブにコア数を設定する。** `numCpus`（使うコア数）と `numDomains`（領域の分割数。Explicit ではコア数の倍数にする必要がある）。同じ値にしておくのが無難。
+5. **ジョブを流して、終わるまで待つ。** 1つずつ待つと順番に流れる。全部投げてから待つと並行して流れる。
+6. **正常に終わったかを確かめて、完了ファイルを書く。**
+
+### スクリプト例（未実行。この環境にAbaqusがないため、動作は確かめていない）
+
+```python
+# -*- coding: utf-8 -*-
+# run_cae_jobs.py
+# 画面なし: abaqus cae noGUI=run_cae_jobs.py -- 元の.caeのパス 作業フォルダ コア数
+# 画面あり: abaqus cae script=run_cae_jobs.py -- 元の.caeのパス 作業フォルダ コア数
+# （Abaqus 2023 までは Python 2.7、2024 からは Python 3。両方で動く書き方にしている）
+import os, sys, shutil, json
+from abaqus import *
+from abaqusConstants import *
+
+src_cae, work_dir, ncpu = sys.argv[-3], sys.argv[-2], int(sys.argv[-1])  # 引数は後ろから数える
+src_dir = os.path.dirname(os.path.abspath(src_cae))
+name = os.path.splitext(os.path.basename(src_cae))[0]
+
+# 1. 作業フォルダを作り、.cae と .jnl を一緒にコピーする（元は触らない）
+if not os.path.isdir(work_dir):
+    os.makedirs(work_dir)
+for ext in ('.cae', '.jnl'):
+    src = os.path.join(src_dir, name + ext)
+    if os.path.exists(src):
+        shutil.copy2(src, work_dir)
+
+# 2. 作業フォルダに移る（ジョブの出力はここに出る）
+os.chdir(work_dir)
+
+# 3. .cae を開く
+openMdb(pathName=name + '.cae')
+
+# 4・5. 中のジョブすべてにコア数を設定して、1つずつ流す
+results = {}
+for job_name in mdb.jobs.keys():
+    job = mdb.jobs[job_name]
+    job.setValues(numCpus=ncpu, numDomains=ncpu)
+    job.submit(consistencyChecking=OFF)
+    job.waitForCompletion()
+    results[job_name] = str(job.status)  # COMPLETED / ABORTED など
+
+# 6. 完了ファイルを書く（制御プログラムはこれを待つ）
+with open('done.json', 'w') as f:
+    json.dump({'cae': name, 'cpus': ncpu, 'jobs': results}, f, indent=2)
+```
+
+制御プログラム（Windows の例）から呼ぶとき:
+
+```
+cd /d D:\work\案件A_条件1_20261020
+abaqus cae noGUI=C:\scripts\run_cae_jobs.py -- D:\models\案件A.cae D:\work\案件A_条件1_20261020 8
+```
+
+### 別の作り方: CAE は入力ファイルを書くだけにし、計算はコマンドで流す
+
+```
+abaqus cae noGUI=write_inp.py -- 案件A.cae      （中で mdb.jobs[名前].writeInput() を呼ぶ）
+abaqus job=Job-1 input=Job-1.inp cpus=8 interactive
+```
+
+- 自動化にはこちらの方が扱いやすい（Claudeの見立て）。計算の命令にコア数（`cpus=`）を直接渡せる。終了コードと出力ファイルで結果を確かめやすい。
+  CAE を閉じてから計算するので、CAE のライセンスを計算中に持ち続けない。別のマシンや計算待ちの列にも回しやすい。
+- 人の手順（CAE の中でジョブを流す）に近いのは、上のスクリプト例の方。
+
+### 正常に終わったかの確かめ方（プロセスの終了 ≠ 正常な完了）
+
+- スクリプトの中では、待った後のジョブの状態（`job.status`）が COMPLETED か（Claudeの知識）。
+- ファイルでは、`.sta` の最後に「THE ANALYSIS HAS COMPLETED SUCCESSFULLY」があるか（Standard）、`.log` にエラーで終わった記録がないか、`.odb` ができているか（Claudeの知識）。
+- 計算が最後まで終わっても結果がおかしいこと（単位系のずれ、結合の切れ）は、ここでは分からない。参考モデルレポートツールの確認項目で見る。
+
+### 注意
+
+- **コア数とライセンス**: Abaqus はコア数が増えるほど、使うライセンス（トークン）が増える（目安: 5 × コア数^0.422 の切り捨て。8コアで約12、16コアで約16。Claudeの知識）。
+  空いている数を超えるとライセンス待ちで止まるので、コア数はライセンスの空きと一緒に決める。
+- **古い版で保存された .cae**: 開く前に版を上げる必要があることがある（`upgradeMdb`。Claudeの知識）。画面ありなら確認の画面が出て止まる。
+- **画面ありで流すとき**: ジョブが終わるまで画面は操作できない。終わったら閉じるなら、制御プログラムは done.json を見てから次に進む。
+- **ジョブが複数のモデルにまたがるとき**: `mdb.jobs` は全モデルのジョブを含む。流すジョブを名前で絞りたいなら、引数で渡す。
+
 ## このプロジェクトとの接点
 
 - **参考モデルレポートツールの設計メモ**（`cae-reference-model-report-tool.md`）: レポートツールの出力が、この流れの「結果の確かめ」「レポート」の部品になる。
@@ -119,6 +215,13 @@
 - 作る手間・直す手間・ソフトの版上げのたびに直す手間が、手作業の手間を上回ることがある。繰り返し回数で見合うかを先に見積もる。
 
 ## 出典（検索結果）
+
+- [Abaqus/CAE execution（recover・script・noGUI などの起動オプション。Abaqus 2016 文書）](https://ceae-server.colorado.edu/v2016/books/usb/pt01ch03s02abx07.html)
+- [Recreating an unsaved model database（.jnl の役割。Abaqus 2017 文書）](https://abaqus-docs.mit.edu/2017/English/SIMACAECAERefMap/simacae-c-dbsfilesrecover.htm)
+- [Abaqus/CAE command summary（-- の後の引数を sys.argv で受け取る例）](https://abaqus-docs.mit.edu/2017/English/SIMACAEEXCRefMap/simaexc-c-caeproc.htm)
+- [Job object（numCpus・numDomains・waitForCompletion。Abaqus 2025 文書）](https://docs.software.vt.edu/abaqusv2025/English/SIMACAEKERRefMap/simaker-c-jobpyc.htm)
+- [複数ジョブを並行して流す書き方（Abaqus 2016 文書）](https://ceae-server.colorado.edu/v2016/books/cmd/pt02ch06s08.html)
+- [.cae が壊れたときの作り直し（caeassistant、第三者）](https://caeassistant.com/questions/tags/load/)
 
 - [Starting Abaqus/CAE（起動オプション、Abaqus 2017 文書）](https://abaqus-docs.mit.edu/2017/English/SIMACAECAERefMap/simacae-c-gststart.htm)
 - [Using Abaqus Scripting Interface commands in your environment file（onCaeStartup）](https://abaqus-docs.mit.edu/2017/English/SIMACAECMDRefMap/simacmd-c-intaclenvironment.htm)
