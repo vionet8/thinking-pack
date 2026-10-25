@@ -61,6 +61,7 @@
 | [テーマを決めるより、リーダーが仮説を持って小さく試す](thoughts/2026-09-29_small-tests-over-themes.md) |
 | [自動化のルールは、手本の真似より基本に忠実に作る](thoughts/2026-10-09_rules-from-fundamentals-not-imitation.md) |
 | [AI活用の推進は、改善を完成させる時間ではなく、始めるきっかけの30分から](thoughts/2026-10-13_ai-adoption-starts-with-30-minutes.md) |
+| [スキルは実際に作って試し、うまくいったら専用のリポジトリにして配る](thoughts/2026-10-25_build-first-then-package.md) |
 
 ### 動画の要約（Motocrab）
 
